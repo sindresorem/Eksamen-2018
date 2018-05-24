@@ -18,7 +18,7 @@ CREATE TABLE HOTELL (
 
 
 
-  CREATE TABLE rom (
+  CREATE TABLE ROM (
   hotellnavn VARCHAR(25) NOT NULL,
   romtype VARCHAR(15) NOT NULL,
   romnr INT(3) NOT NULL,
