@@ -23,4 +23,4 @@ CREATE TABLE HOTELL (
   romtype VARCHAR(15) NOT NULL,
   romnr INT(3) NOT NULL,
   PRIMARY KEY (hotellnavn, romnr),
-  FOREIGN KEY (hotellnavn, romtype) REFERENCES (hotellromtype));
+  FOREIGN KEY (hotellnavn, romtype) REFERENCES HOTELLROMTYPE(hotellnavn, romtype));
