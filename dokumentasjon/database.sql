@@ -6,7 +6,7 @@ CREATE TABLE HOTELL (
 
   CREATE TABLE ROMTYPE (
     romtype VARCHAR(20) NOT NULL,
-  PRIMARY KEY (romtype),
+  PRIMARY KEY (romtype));
 
   CREATE TABLE HOTELLROMTYPE (
     hotellnavn VARCHAr(40) NOT NULL,
@@ -23,4 +23,5 @@ CREATE TABLE HOTELL (
   romtype VARCHAR(15) NOT NULL,
   romnr INT(3) NOT NULL,
   PRIMARY KEY (hotellnavn, romnr),
-  FOREIGN KEY (hotellnavn, romtype) REFERENCES (hotell, romtype));
+  FOREIGN KEY (hotellnavn) REFERENCES (hotell);
+  FOREIGN KEY (romtype) REFERENCES (romtype));
