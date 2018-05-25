@@ -1,8 +1,8 @@
+
 CREATE TABLE HOTELL (
   hotellnavn VARCHAR(40) NOT NULL,
   sted VARCHAR(25) NOT NULL,
   PRIMARY KEY (hotellnavn));
-
 
   CREATE TABLE ROMTYPE (
     romtype VARCHAR(20) NOT NULL,
@@ -15,8 +15,6 @@ CREATE TABLE HOTELL (
   PRIMARY KEY (hotellnavn, romtype),
   FOREIGN KEY (hotellnavn) REFERENCES HOTELL(hotellnavn),
   FOREIGN KEY (romtype) REFERENCES ROMTYPE(romtype));
-
-
 
   CREATE TABLE ROM (
   hotellnavn VARCHAR(25) NOT NULL,
