@@ -13,7 +13,7 @@
   else
   {
     include ("start.php");
-    print("Velkommend til startsiden - Du er logget inn med $innloggetBruker");
+    print("Velkommend til startsiden - Du er logget inn som $innloggetBruker");
     include ("slutt.php");
 
   }
