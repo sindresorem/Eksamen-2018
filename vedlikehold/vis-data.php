@@ -17,7 +17,7 @@
    Klasse
    <select name="klassekode" id="klassekode" required>
      <option value="">Velg datatype</option>
-     <?php include("dynamiske-funksjoner.php"); listeboksData(); ?>
+     <?php include("dynamiske-funksjoner.php"); listeboksHotell(); ?>
    </select>  <br/>
    <input type="submit"  value="Finn data" name="finnKnapp" id="finnDataKnapp">
    <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
@@ -31,7 +31,7 @@ if(isset($_POST ["finnKlasseKnapp"]))
 
 include("database-tilkobling.php");
 
-$sqlSetning="SELECT * FROM bilde;";
+$sqlSetning="SELECT * FROM HOTELL;";
 $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra databasen");
 
 $antallRader=mysqli_num_rows($sqlResultat);

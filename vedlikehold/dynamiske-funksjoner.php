@@ -15,7 +15,7 @@ function  listeboksHotell()
     $hotellnavn=$rad["hotellnavn"];
     $sted=$rad["sted"];
 
-    print("<option value='$klassekode'>$klassekode $klassenavn</option>");
+    print("<option value='$hotellnavn'>$hotellnavn $sted</option>");
     }
 
 }
