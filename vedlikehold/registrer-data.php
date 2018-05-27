@@ -34,11 +34,11 @@
 <?php
   if (isset($_POST ["finnDataKnapp"]))
     {
-      $hotell=$_POST ["hotell"];
+    //  $hotell=$_POST ["hotell"];
 
       include("database-tilkobling.php");
 
-      $sqlSetning="SELECT * FROM HOTELL;";
+      $sqlSetning="SELECT * FROM hotell WHERE hotellnavn='$hotellnavn';";
       $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra databasen");
 
       $antallRader=mysqli_num_rows($sqlResultat);
@@ -49,22 +49,48 @@
 
           $antallRader=mysqli_num_rows($sqlResultat);
 
-          $hotellnavn=$rad["hotellnavn"];
-          $sted=$rad["sted"];
+          $hotellnavn=$rad["hotellnavn"];        
 
           print ("<form method='post' action='' id='endreHotell' name='endreHotell'>");
-          print ("Hotellnavn <input type='text' value='' name='hotellnavn' id='hotellnavn'  /> <br />");
-          print ("Sted <input type='text' value='' name='sted' id='sted' required /> <br />");
-          print ("<input type='submit' value='Registrer data ' name='registrerDataKnapp' id='registrerDataKnapp'>");
+          print ("Hotellnavn <input type='text' value='' name='hotellnavn' id='hotellnavn' required /> <br />");
+          print ("Sted <input type='text' value='' name='sted' id='sted'  /> <br />");
+          print ("<input type='submit' value='Registrer data' name='registrerDataKnapp' id='registrerDataKnapp'>");
           print ("</form>");
 
+          if (isset($_POST ["registrerDataKnapp"]))
+          {
+            $hotellnavn=$_POST ["hotellnavn"];
+            $sted=$_POST ["sted"];
 
 
+    if (!$hotellnavn || !$sted)
 
+    {
+      print ("Alle felt må fylles ut.");
+    }
 
+  else {
+    include("database-tilkobling.php"); //tilkobling til database og valg av databaser
 
-      }
+    $sqlSetning="SELECT * FROM hotell WHERE hotellnavn='$hotellnavn';";
+    $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å registrere data i db.");
+    $antallRader=mysqli_num_rows($sqlResultat);
+
+    if ($antallRader!=0)
+    {
+      print ("Hotellnavn er allerede i bruk, vennligst velg et annet hotellnavn.");
+    }
+    else
+    {
+      $sqlSetning="INSERT INTO hotell VALUES('$hotellnavn','$sted');";
+      mysqli_query($db,$sqlSetning) or die ("Ikke mulig å registrere data i databasen");
+
+      print ("Følgene hotell er nå registrert: $hotellnavn $sted");
+     }
+    }
+   }
   }
+}
 include ("slutt.php");
 }
  ?>
