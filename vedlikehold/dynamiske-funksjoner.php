@@ -1,10 +1,10 @@
 <?php
 
-function  listeboksHotell()
+function  listeboksData()
 {
   include("database-tilkobling.php");
 
-  $sqlSetning="SELECT * FROM HOTELL ORDER BY hotellnavn;";
+  $sqlSetning="SELECT * FROM hotell, romtype, hotellromtype, rom;";
   $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra database");
 
   $antallRader=mysqli_num_rows($sqlResultat);
@@ -12,19 +12,26 @@ function  listeboksHotell()
   for ($r=1;$r<=$antallRader;$r++)
   {
     $rad=mysqli_fetch_array($sqlResultat);
-    $hotellnavn=$rad["hotellnavn"];
-    $sted=$rad["sted"];
+    $hotell=$rad["hotell"];
+    $romtype=$rad["romtype"];
+    $hotellromtype=$rad["hotellromtype"];
+    $rom=$rad["rom"];
 
-    print("<option value='$hotellnavn'>$hotellnavn $sted</option>");
+
+    //print("<option value='$hotell'> $hotell </option>");
+    //print("<option value='$romtype'> $romtype</option>");
+    //print("<option value='$hotellromtype'> $hotellromtype</option>");
+    //print("<option value='$rom'> $rom</option>");
+
     }
 
 }
 
-function  listeboksStudentReg()
+function  listeboksHotell()
 {
   include("database-tilkobling.php");
 
-  $sqlSetning="SELECT * FROM klasse ORDER BY klassekode;";
+  $sqlSetning="SELECT * FROM hotell;";
   $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra database");
 
   $antallRader=mysqli_num_rows($sqlResultat);

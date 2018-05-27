@@ -14,10 +14,9 @@
 <h2>Vis data</h2>
 
 <form method="post" action="" id="finnData" name="finnData">
-   Klasse
-   <select name="klassekode" id="klassekode" required>
+   Data <select name="datatype" id="datatype" required>
      <option value="">Velg datatype</option>
-     <?php include("dynamiske-funksjoner.php"); listeboksHotell(); ?>
+     <?php include("dynamiske-funksjoner.php"); listeboksData(); ?>
    </select>  <br/>
    <input type="submit"  value="Finn data" name="finnKnapp" id="finnDataKnapp">
    <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
@@ -26,7 +25,7 @@
 <?php
 if(isset($_POST ["finnKlasseKnapp"]))
   {
-    $klassekode=$_POST ["klassekode"];
+    $hotellnavn=$_POST ["hotellnavn"];
 
 
 include("database-tilkobling.php");
