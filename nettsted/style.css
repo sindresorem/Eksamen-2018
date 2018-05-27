@@ -1,0 +1,45 @@
+.meny {
+  overflow: hidden;
+  background-color: #9fc6a9;
+  position: fixed;
+  padding: 10px;
+  padding-right: 50px;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+}
+
+
+.meny a {
+  float: center;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  margin-left: 100px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.meny h1 {
+  float: left;
+  padding-left: 20px;
+  font-weight: bold;
+
+
+
+}
+.meny a:hover {
+  background: #eff5f1;
+  color: black;
+  border-radius: 50px;
+}
+
+
+article {
+  padding: 16px;
+  margin-left: 40px;
+  margin-top: 100px;
+  height: 1000px;
+}
