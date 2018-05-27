@@ -14,22 +14,31 @@ include("start.html");
 <?php
 	if(isset($_POST["finnStedKnapp"]))
 		{
-			include("db-tilkobling.php");
-
 			$sted=$_POST["sted"];
 
-			$sqlSetning="SELECT * FROM hotell WHERE sted='$sted';";
-			$sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig &aring; hente data fra database");
+			include("db-tilkobling.php");
 
-			$rad=mysqli_fetch_array($sqlResultat);
-			$hotellnavn=$rad["hotellnavn"];
+			print("Her er ulike hoteller for ditt søk: $sted<br/>");
 
-			print("<br/>");
-			print("<form method='post' action='' id='finnHotellSkjema' name='finnHotellSkjema'>");
-			print("Sted <input type='text' value='$sted' id='sted' name='sted' readonly /><br/>");
-			print("Hotellnavn <input type='text' value='$hotellnavn' id='hotellnavn' name='hotellnavn' required /><br/>");
-			print("<input type='submit' value='Hotell' id='finnHotellKnapp' name='finnHotellKnapp'>");
-			print("</form>");
+			$sqlSetning="SELECT * FROM hotell WHERE sted LIKE '$sted' ORDER BY hotellnavn;";
+			$sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig &aring; hente data fra databasen");
+			$antallRader=mysqli_num_rows($sqlResultat);
+
+
+			print("<h3>Velg ditt reisemål</h3>");
+			print("<table border=1>");
+			print("<tr><th align=left>Sted</th><th align=left>Hotell</th> <th align=left></th></tr>");
+
+			for($r=1;$r<=$antallRader;$r++)
+				{
+					$rad=mysqli_fetch_array($sqlResultat);
+					$sted=$rad["sted"];
+					$hotellnavn=$rad["hotellnavn"];
+
+					print("<tr><td>$sted </td><td>$hotellnavn </td></tr>");
+				}
+
+			print("</table>");
 		}
 
 		if(isset($_POST["finnHotellKnapp"]))
