@@ -34,7 +34,7 @@ include("start.html");
  mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i database");
  print ("F&oslash;lgende data er n&aring; registrert: <br /> ");
  print ("Brukernavn: $brukernavn <br /> Passord: $passord <br /> <br />");
- print ("<a href='innlogging.php'>G&aring; til innloggingsside </a>");
+ print ("<a href='logginn.php'>G&aring; til innloggingsside </a>");
  }
  }
 }
