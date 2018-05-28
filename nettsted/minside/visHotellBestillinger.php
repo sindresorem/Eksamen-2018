@@ -30,22 +30,22 @@ $sqlSetning="SELECT * FROM kunde;";
 $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente fra database");
 $antallRader=mysqli_num_rows($sqlResultat);
 
-print("<h3>Vis egne hotellbestillinger</h3>");
+print("<h3>Mine hotellbestillinger</h3>");
 print("<table border=1>");
-print("<tr><th align=left>hotellnavn</th><th align=left>sted</th><th align=left>romtype</th><th align=left>dato</th><th align=left>bilde</th></tr>");
+print("<tr><th align=left>sted</th><th align=left>hotellnavn</th><th align=left>romtype</th><th align=left>antall rom</th><th align=left>dato</th></tr>");
 
 }
 
 for ($r=1;$r<=$antallRader;$r++)
 {
 	$rad=mysqli_fetch_array($sqlResultat);
+  $sted=$rad["sted"];
 	$hotellnavn=$rad["hotellnavn"];
-	$sted=$rad["sted"];
 	$romtype=$rad["romtype"];
+  $antallrom=$rad["antallrom"];
   $dato=$rad["dato"];
-	$bilde=$rad["bilde"];
 
-	print("<tr><td>$hotellnavn</td><td>$sted</td><td>$romtype</td><td>$dato</td><td>$bilde</td></tr>");
+	print("<tr><td>$sted</td><td>$hotellnavn</td><td>$romtype</td><td>$antallrom</td><td>$dato</td></tr>");
 }
 
 print("</table>");
