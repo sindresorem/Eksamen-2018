@@ -23,9 +23,10 @@ CREATE TABLE HOTELL (
   PRIMARY KEY (hotellnavn, romnr),
   FOREIGN KEY (hotellnavn, romtype) REFERENCES HOTELLROMTYPE(hotellnavn, romtype));
 
-  CREATE TABLE ADMIN (
-  brukernavn VARCHAR(25) NOT NULL,
-  passord VARCHAR(30) NOT NULL));
+ CREATE TABLE ADMIN (
+ brukernavn VARCHAR(25) NOT NULL,
+ passord VARCHAR(30) NOT NULL,
+ PRIMARY KEY (brukernavn))
 
   CREATE TABLE STED (
   sted VARCHAR(25) NOT NULL,
@@ -37,7 +38,7 @@ CREATE TABLE HOTELL (
   sted VARCHAR(25) NOT NULL,
   hotellnavn VARCHAR(40) NOT NULL,
   romtype VARCHAR(20) NOT NULL,
-  antall rom INT(10) NOT NULL,
+  antallrom INT(10) NOT NULL,
   dato DATE,
   PRIMARY KEY (brukernavn),
   FOREIGN KEY (sted, hotellnavn) REFERENCES HOTELL(sted, hotellnavn),
