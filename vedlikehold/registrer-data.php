@@ -28,7 +28,6 @@
     <?php include("dynamiske-funksjoner.php"); listeboksRom(); ?>
 
   </select> <br />
-
   <input type="submit" value="Velg Data" id="finnDataKnapp" name=" finnDataKnapp" />
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br/>
 </form>
