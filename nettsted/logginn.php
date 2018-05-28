@@ -1,4 +1,6 @@
-
+<?php
+include("start.html");
+?>
 <h3>Innlogging </h3>
 <form action="" id="innloggingSkjema" name="innloggingSkjema" method="post">
  Brukernavn: <input name="brukernavn" type="text" id="brukernavn"> <br />
@@ -7,7 +9,7 @@
  <input type="reset" name="nullstill" id="nullstill" value="Nullstill"> <br />
 </form>
 Ny bruker ? <br />
-<a href="registrer-bruker.php">Registrer deg her:</a> <br /> <br />
+<a href="registrerBruker.php">Registrer deg her:</a> <br /> <br />
 <?php
  if (isset($_POST ["logginn"]))
  {
@@ -26,4 +28,5 @@ Ny bruker ? <br />
   }
  }
 
+include("slutt.html");
 ?>

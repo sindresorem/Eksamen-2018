@@ -28,11 +28,9 @@
   passord VARCHAR(30) NOT NULL,
   PRIMARY KEY (brukernavn))
 
-
   CREATE TABLE STED (
   sted VARCHAR(25) NOT NULL,
   PRIMARY KEY (sted));
-
 
   CREATE TABLE KUNDE (
   brukernavn VARCHAR(25) NOT NULL,
@@ -44,9 +42,7 @@
   dato DATE,
   PRIMARY KEY (brukernavn, passord),
 
-
-
-  CREATE TABLE logginn (
+  CREATE TABLE bruker (
   brukernavn VARCHAR(25) NOT NULL,
   passord VARCHAR (25) NOT NULL,
   PRIMARY KEY (brukernavn));

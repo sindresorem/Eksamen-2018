@@ -1,4 +1,6 @@
-
+<?php
+include("start.html");
+?>
 
 <h3>Registrer bruker </h3>
 <form action="" id="registrerBrukerSkjema" name="registrerBrukerSkjema" method="post">
@@ -36,4 +38,6 @@
  }
  }
 }
+
+include("slutt.html");
 ?>
