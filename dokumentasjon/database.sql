@@ -40,7 +40,7 @@
   romtype VARCHAR(20) NOT NULL,
   antallrom INT(2) NOT NULL,
   dato DATE,
-  PRIMARY KEY (brukernavn, passord),
+  PRIMARY KEY (brukernavn, passord));
 
   CREATE TABLE bruker (
   brukernavn VARCHAR(25) NOT NULL,
