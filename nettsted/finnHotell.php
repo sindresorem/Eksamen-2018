@@ -14,20 +14,23 @@ include("start.html");
 <?php
 	if(isset($_POST["finnStedKnapp"]))
 		{
-			include("db-tilkobling.php");
 
+			include("db-tilkobling.php");
 			$sted=$_POST["sted"];
 
 			$sqlSetning="SELECT * FROM hotell WHERE sted='$sted';";
 			$sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig &aring; hente data fra database");
 
 			$rad=mysqli_fetch_array($sqlResultat);
+			$sted=$rad["sted"];
 			$hotellnavn=$rad["hotellnavn"];
 
-			print("<br/>");
+			 print("<br/>");
 			print("<form method='post' action='' id='finnHotellSkjema' name='finnHotellSkjema'>");
 			print("Sted <input type='text' value='$sted' id='sted' name='sted' readonly /><br/>");
-			print("Hotellnavn <input type='text' value='$hotellnavn' id='hotellnavn' name='hotellnavn' required /><br/>");
+			print("Hotellnavn <select name='hotellnavn' id='hotellnavn' value='$hotellnavn'>");
+				include("dynamiskeFunksjoner.php");listeboksHotellValgt($hotellnavn);
+			print("</select><br/>");
 			print("<input type='submit' value='Hotell' id='finnHotellKnapp' name='finnHotellKnapp'>");
 			print("</form>");
 		}
