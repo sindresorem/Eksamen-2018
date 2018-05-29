@@ -24,7 +24,7 @@ Ny bruker ? <br />
  {
  session_start();
  $_SESSION["brukernavn"]=$brukernavn;
- print("<meta http-equiv='refresh' content='0;url=finnHotell.php'>");
+ print("<meta http-equiv='refresh' content='0;url=minside.php'>");
   }
  }
 
