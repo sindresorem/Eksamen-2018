@@ -2,7 +2,7 @@
 include("start.html");
 include("db-tilkobling.php");
 
-	$sqlSetning="SELECT sted FROM hotell ORDER BY sted;";
+	$sqlSetning="SELECT sted FROM sted ORDER BY sted;";
 	$sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig &aring; hente data fra databasen");
 	$antallRader=mysqli_num_rows($sqlResultat);
 

@@ -49,6 +49,8 @@ for ($r=1;$r<=$antallRader;$r++)
 }
 
 print("</table>");
+print("<a href='minside.php'>Tilbake</a>");
+
 
 include("slutt.html");
 }
