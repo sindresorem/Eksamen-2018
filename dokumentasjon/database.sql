@@ -1,8 +1,17 @@
 
+<<<<<<< HEAD
+CREATE TABLE STED (
+sted VARCHAR(25) NOT NULL,
+PRIMARY KEY (sted));
+
+CREATE TABLE HOTELL (
+=======
   CREATE TABLE HOTELL (
+>>>>>>> 6b21848d33aac32163f1018f9c8e510312738a41
   hotellnavn VARCHAR(40) NOT NULL,
   sted VARCHAR(25) NOT NULL,
-  PRIMARY KEY (hotellnavn));
+  PRIMARY KEY (hotellnavn),
+  FOREIGN KEY (sted) REFERENCES STED(sted));
 
   CREATE TABLE ROMTYPE (
   romtype VARCHAR(20) NOT NULL,
@@ -25,6 +34,9 @@
 
   CREATE TABLE ADMIN (
   brukernavn VARCHAR(25) NOT NULL,
+<<<<<<< HEAD
+  passord VARCHAR(30) NOT NULL));
+=======
   passord VARCHAR(30) NOT NULL,
   PRIMARY KEY (brukernavn))
 
@@ -46,3 +58,4 @@
   brukernavn VARCHAR(25) NOT NULL,
   passord VARCHAR (25) NOT NULL,
   PRIMARY KEY (brukernavn));
+>>>>>>> 6b21848d33aac32163f1018f9c8e510312738a41
