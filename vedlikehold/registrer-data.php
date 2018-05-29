@@ -22,7 +22,11 @@
     <option value="Rom">Rom</option>
     <?php include("dynamiske-funksjoner.php"); listeboksData(); ?>
 
+<<<<<<< HEAD
   </select> <br />
+=======
+</select> <br />
+>>>>>>> 53ad9fcf6f55b50bce47b270b459f64bb224cc01
 
   <input type="submit" value="Velg Data" id="finnDataKnapp" name=" finnDataKnapp" />
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br/>
