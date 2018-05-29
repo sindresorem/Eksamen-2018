@@ -16,14 +16,18 @@
 
  <form method="post" action="" id="finnKnapp" name="finnKnapp" onSubmit="return validerData()">
    Datatype <select name="data" id="data">
+
     <option value="Hotell">Hotell</option>
     <option value="Romtype">Romtype</option>
     <option value="Hotellromtype">Hotellromtype</option>
     <option value="Rom">Rom</option>
-    <?php include("dynamiske-funksjoner.php"); listeboksData(); ?>
+
+    <?php include("dynamiske-funksjoner.php"); listeboksHotell(); ?>
+    <?php include("dynamiske-funksjoner.php"); listeboksRomtype(); ?>
+    <?php include("dynamiske-funksjoner.php"); listeboksHotellRomType(); ?>
+    <?php include("dynamiske-funksjoner.php"); listeboksRom(); ?>
 
   </select> <br />
-
   <input type="submit" value="Velg Data" id="finnDataKnapp" name=" finnDataKnapp" />
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br/>
 </form>
@@ -34,7 +38,6 @@
 <?php
   if (isset($_POST ["finnDataKnapp"]))
     {
-    //  $hotell=$_POST ["hotell"];
 
       include("database-tilkobling.php");
 
