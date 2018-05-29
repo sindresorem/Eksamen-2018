@@ -38,7 +38,7 @@
 
       include("database-tilkobling.php");
 
-      $sqlSetning="SELECT * FROM hotell WHERE hotellnavn='$hotellnavn';";
+      $sqlSetning="SELECT * FROM hotell;";
       $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra databasen");
 
       $antallRader=mysqli_num_rows($sqlResultat);
@@ -49,9 +49,9 @@
 
           $antallRader=mysqli_num_rows($sqlResultat);
 
-          $hotellnavn=$rad["hotellnavn"];        
+          $hotellnavn=$rad["hotellnavn"];
 
-          print ("<form method='post' action='' id='endreHotell' name='endreHotell'>");
+          print ("<form method='post' action='' id='registrerHotell' name='registrerHotell'>");
           print ("Hotellnavn <input type='text' value='' name='hotellnavn' id='hotellnavn' required /> <br />");
           print ("Sted <input type='text' value='' name='sted' id='sted'  /> <br />");
           print ("<input type='submit' value='Registrer data' name='registrerDataKnapp' id='registrerDataKnapp'>");
