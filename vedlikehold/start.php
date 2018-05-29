@@ -30,6 +30,11 @@
 
         <h3>Brukerfunksjoner</h3>
         <ul>
+          <li><a href="hotell.php"> Hotell </a></li>
+          <li><a href="hotellromtype.php"> HotellRomType </a></li>
+          <li><a href="rom.php"> Rom </a></li>
+          <li><a href="romtype.php"> Romtype </a></li></br>
+
           <li><a href="registrer-data.php"> Registre data </a></li>
           <li><a href="vis-data.php"> Vis data </a></li>
           <li><a href="vis-kunder.php"> Vis kunder </a></li>
