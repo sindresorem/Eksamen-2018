@@ -1,6 +1,4 @@
-
 <?php
-include("start.html");
 session_start();
 @$innloggetBruker=$_SESSION["brukernavn"];
 
@@ -11,7 +9,7 @@ if (!$innloggetBruker)
 }
 else
 {
-
+include("start.html");
 ?>
 
 <h3>Endre hotellbestilling</h3>
