@@ -17,6 +17,11 @@ function listeboksSted()
   }
 }
 
+
+
+
+
+
 function listeboksHotell()
 {
   include("db-tilkobling.php");
@@ -30,7 +35,7 @@ function listeboksHotell()
   {
     $rad=mysqli_fetch_array($sqlResultat);
     $hotellnav=$rad["sted"];
-    print ("<option value='$sted'>$sted $sted </option>");
+    print ("<option value='$sted'>$sted</option>");
   }
 }
 
