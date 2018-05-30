@@ -25,26 +25,26 @@
 
     </ul>
 
-    <h2>Slett hotell</h2>
+    <h2>Slett rom</h2>
 
-     <form method="post" action="" id="slettHotell" name="slettHotell" onSubmit="return bekreft()">
+     <form method="post" action="" id="slettRom" name="slettRom" onSubmit="return bekreft()">
        Hotell
        <select name="hotellnavn" id="hotellnavn" required>
-         <option value="">Velg hotell</option>
-         <?php include("dynamiske-funksjoner.php"); listeboksHotell(); ?>
+         <option value="">Velg rom</option>
+         <?php include("dynamiske-funksjoner.php"); listeboksRom(); ?>
        </select>  <br/>
-       <input type="submit" value="Slett hotell" id="slettHotellKnapp" name="slettHotellKnapp" />
+       <input type="submit" value="Slett rom" id="slettRomKnapp" name="slettRomKnapp" />
      </form>
 
 
     <?php
-    if(isset($_POST ["slettHotellKnapp"]))
+    if(isset($_POST ["slettRomKnapp"]))
       {
         include("database-tilkobling.php");
 
         $hotellnavn=$_POST ["hotellnavn"];
 
-        $sqlSetning="DELETE FROM hotell WHERE hotellnavn='$hotellnavn';";
+        $sqlSetning="DELETE FROM rom WHERE hotellnavn='$hotellnavn';";
         mysqli_query($db,$sqlSetning) or die ("Ikke mulig å slette data fra database");
 
         print ("$hotellnavn er nå slettet fra db.  <BR />");

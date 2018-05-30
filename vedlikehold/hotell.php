@@ -12,7 +12,7 @@
 
     ?>
 
-    <h5>Brukerfunksjoner data</h5>
+    <h5>Brukerfunksjoner for hotell</h5>
     <ul>
 
       <li><a href="registrer-hotell.php"> Registrer hotell </a></li>

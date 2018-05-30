@@ -1,32 +1,5 @@
 <?php
 
-function  listeboksData()
-{
-  include("database-tilkobling.php");
-
-  $sqlSetning="SELECT * FROM hotell, romtype, hotellromtype, rom;";
-  $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra database");
-
-  $antallRader=mysqli_num_rows($sqlResultat);
-
-  for ($r=1;$r<=$antallRader;$r++)
-  {
-    $rad=mysqli_fetch_array($sqlResultat);
-    $hotell=$rad["hotell"];
-    $romtype=$rad["romtype"];
-    $hotellromtype=$rad["hotellromtype"];
-    $rom=$rad["rom"];
-
-
-    //print("<option value='$hotell'> $hotell </option>");
-    //print("<option value='$romtype'> $romtype</option>");
-    //print("<option value='$hotellromtype'> $hotellromtype</option>");
-    //print("<option value='$rom'> $rom</option>");
-
-    }
-
-}
-
 function  listeboksHotell()
 {
   include("database-tilkobling.php");
@@ -47,6 +20,78 @@ function  listeboksHotell()
     }
 
 }
+
+
+function  listeboksHotellRomType()
+{
+  include("database-tilkobling.php");
+
+  $sqlSetning="SELECT * FROM hotellromtype ORDER BY hotellnavn;";
+  $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra database");
+
+  $antallRader=mysqli_num_rows($sqlResultat);
+
+  for ($r=1;$r<=$antallRader;$r++)
+  {
+    $rad=mysqli_fetch_array($sqlResultat);
+    $hotellnavn=$rad["hotellnavn"];
+    $romtype=$rad["romtype"];
+    $antallrom=$rad["antallrom"];
+
+
+    print("<option value='$hotellnavn'> $hotellnavn $romtype $antallrom </option>");
+    }
+
+}
+
+
+function  listeboksRom()
+{
+  include("database-tilkobling.php");
+
+  $sqlSetning="SELECT * FROM rom ORDER BY hotellnavn;";
+  $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra database");
+
+  $antallRader=mysqli_num_rows($sqlResultat);
+
+  for ($r=1;$r<=$antallRader;$r++)
+  {
+    $rad=mysqli_fetch_array($sqlResultat);
+    $hotellnavn=$rad["hotellnavn"];
+    $romtype=$rad["romtype"];
+    $romnr=$rad["romnr"];
+
+
+    print("<option value='$hotellnavn'> $hotellnavn $romtype $romnr </option>");
+    }
+
+}
+
+function  listeboksRomType()
+{
+  include("database-tilkobling.php");
+
+  $sqlSetning="SELECT * FROM romtype ORDER BY romtype;";
+  $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra database");
+
+  $antallRader=mysqli_num_rows($sqlResultat);
+
+  for ($r=1;$r<=$antallRader;$r++)
+  {
+    $rad=mysqli_fetch_array($sqlResultat);
+    $romtype=$rad["romtype"];
+
+
+
+    print("<option value='$romtype'>$romtype</option>");
+    }
+
+}
+
+
+
+
+
 
 function listeboksStudent()
 {
