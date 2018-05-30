@@ -1,13 +1,11 @@
 
-<<<<<<< HEAD
+
 CREATE TABLE STED (
 sted VARCHAR(25) NOT NULL,
 PRIMARY KEY (sted));
 
-CREATE TABLE HOTELL (
-=======
+
   CREATE TABLE HOTELL (
->>>>>>> 6b21848d33aac32163f1018f9c8e510312738a41
   hotellnavn VARCHAR(40) NOT NULL,
   sted VARCHAR(25) NOT NULL,
   PRIMARY KEY (hotellnavn),
@@ -34,11 +32,8 @@ CREATE TABLE HOTELL (
 
   CREATE TABLE ADMIN (
   brukernavn VARCHAR(25) NOT NULL,
-<<<<<<< HEAD
-  passord VARCHAR(30) NOT NULL));
-=======
   passord VARCHAR(30) NOT NULL,
-  PRIMARY KEY (brukernavn))
+  PRIMARY KEY (brukernavn));
 
   CREATE TABLE STED (
   sted VARCHAR(25) NOT NULL,
@@ -54,8 +49,13 @@ CREATE TABLE HOTELL (
   dato DATE,
   PRIMARY KEY (brukernavn, passord));
 
-  CREATE TABLE bruker (
+  CREATE TABLE BRUKER (
   brukernavn VARCHAR(25) NOT NULL,
   passord VARCHAR (25) NOT NULL,
   PRIMARY KEY (brukernavn));
->>>>>>> 6b21848d33aac32163f1018f9c8e510312738a41
+
+
+
+  CREATE TABLE DATO (
+  dato DATE NOT NULL,
+  PRIMARY KEY (dato));
