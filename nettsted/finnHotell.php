@@ -27,7 +27,7 @@ include("start.html");
 			print("<br/>");
 			print("<form method='post' action='' id='finnHotellSkjema' name='finnHotellSkjema'>");
 			print("Sted <input type='text' value='$sted' id='sted' name='sted' readonly /><br/>");
-<<<<<<< HEAD
+
 			print("Sted <input type='text' value='$hotellnavn' id='sted' name='sted' readonly /><br/>");
 			print("Hotellnavn <select name='hotellnavn' id='hotellnavn'>");
 				include("dynamiskeFunksjoner1.php"); listeboksHotellnavn($sted);
