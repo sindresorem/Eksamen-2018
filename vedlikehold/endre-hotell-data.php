@@ -12,16 +12,17 @@
 
     ?>
 
-    <h5>Brukerfunksjoner data</h5>
+    <h5>Endring av data</h5>
     <ul>
-      <li><a href="registrer-hotell.php"> Registrer hotell </a></li>
-      <li><a href="vis-hotell-data.php"> Vis data </a></li>
-      <li><a href="endre-hotell-data.php"> Endre data </a></li>
-      <li><a href="slett-hotell-data.php"> Slett data </a></li>
+      <li><a href="endre-sted-data.php"> Endre sted </a></li>
+      <li><a href="endre-hotell-data.php"> Endre hotell </a></li>
+      <li><a href="endre-hotellromtype-data.php"> Endre hotellromtype </a></li>
+      <li><a href="endre-rom-data.php"> Endre rom </a></li>
+      <li><a href="endre-romtype-data.php"> Endre romtype </a></li>
 
     </ul>
 
-    <h2>Endre hotell</h2>
+    <h3>Endre hotell</h3>
 
     <form method="post" action="" id="finnHotell" name="finnHotell">
       Hotell

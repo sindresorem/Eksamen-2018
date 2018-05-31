@@ -14,14 +14,15 @@
 
     <script src="funksjoner.js"> </script>
 
-    <h5>Brukerfunksjoner data</h5>
+    <h5>Sletting av data</h5>
 
     <ul>
 
-      <li><a href="registrer-hotell.php"> Registrer hotell </a></li>
-      <li><a href="vis-hotell-data.php"> Vis data </a></li>
-      <li><a href="endre-hotell-data.php"> Endre data </a></li>
-      <li><a href="slett-hotell-data.php"> Slett data </a></li>
+      <li><a href="slett-sted.php"> Slett sted </a></li>
+      <li><a href="slett-hotell-data.php"> Slett hotell </a></li>
+      <li><a href="slett-hotellromtype-data.php"> Slett hotellromtype </a></li>
+      <li><a href="slett-rom-data.php"> Slett rom </a></li>
+      <li><a href="slett-romtype-data.php"> Slett romtype </a></li>
 
     </ul>
 

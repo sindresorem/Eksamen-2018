@@ -12,13 +12,14 @@
 
     ?>
 
-    <h5>Brukerfunksjoner data</h5>
+    <h5>Registrering av data</h5>
     <ul>
 
+      <li><a href="registrer-sted.php"> Registrer sted </a></li>
+      <li><a href="registrer-hotell.php"> Registrer hotell </a></li>
+      <li><a href="registrer-hotellromtype.php"> Registrer hotellromtype </a></li>
+      <li><a href="registrer-rom.php"> Registrer rom </a></li>
       <li><a href="registrer-romtype.php"> Registrer romtype </a></li>
-      <li><a href="vis-romtype-data.php"> Vis data </a></li>
-      <li><a href="endre-romtype-data.php"> Endre data </a></li>
-      <li><a href="slett-romtype-data.php"> Slett data </a></li>
 
     </ul>
 

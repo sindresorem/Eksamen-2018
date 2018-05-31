@@ -12,13 +12,14 @@
 
     ?>
 
-    <h5>Brukerfunksjoner for hotellromtype</h5>
+    <h5>Sletting av data</h5>
     <ul>
 
-      <li><a href="registrer-hotellromtype.php"> Registrer hotellromtype </a></li>
-      <li><a href="vis-hotellromtype-data.php"> Vis data </a></li>
-      <li><a href="endre-hotellromtype-data.php"> Endre data </a></li>
-      <li><a href="slett-hotellromtype-data.php"> Slett data </a></li>
+      <li><a href="slett-sted.php"> Slett sted </a></li>
+      <li><a href="slett-hotell-data.php"> Slett hotell </a></li>
+      <li><a href="slett-hotellromtype-data.php"> Slett hotellromtype </a></li>
+      <li><a href="slett-rom-data.php"> Slett rom </a></li>
+      <li><a href="slett-romtype-data.php"> Slett romtype </a></li>
 
     </ul>
 
