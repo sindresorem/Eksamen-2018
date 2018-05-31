@@ -34,7 +34,7 @@ else
 <br />
 <li><a href="endreHotellbestillinger.php">Endre hotellbestillinger</a></li>
 <br />
-<li><a href="slettHotellbestillinger.php">Slett hotellbestillinger</a></li>
+<li><a href="slettHotellbestilling.php">Slett hotellbestillinger</a></li>
 <br />
 <br />
 <br />

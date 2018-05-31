@@ -24,6 +24,8 @@ else
   <input type="submit" value="Finn dato" name="finnHotellDato" id="finnHotellDato">
 </form>
 
+
+
 <?php
 if(isset($_POST["finnHotellDato"]))
 {
@@ -89,6 +91,8 @@ if(isset($_POST["finnHotellDato"]))
     mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; endre data i databasen");
     print ("Hotell med med navn $hotellnavn er n&aring; endret<br/>");
   }
+
+
 
 include("slutt.html");
 }

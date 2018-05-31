@@ -1,9 +1,11 @@
-
+CREATE TABLE PLASSERING (
+ sted VARCHAR(25) NOT NULL,
+ land VARCHAR(20) NOT NULL,
+ PRIMARY KEY (sted));
 
 CREATE TABLE STED (
 sted VARCHAR(25) NOT NULL,
 PRIMARY KEY (sted));
-
 
   CREATE TABLE HOTELL (
   hotellnavn VARCHAR(40) NOT NULL,
@@ -46,7 +48,8 @@ PRIMARY KEY (sted));
   hotellnavn VARCHAR(25) NOT NULL,
   romtype VARCHAR(20) NOT NULL,
   antallrom INT(2) NOT NULL,
-  dato DATE,
+  datofra DATE NOT NULL,
+  datotil DATE NOT NULL,
   PRIMARY KEY (brukernavn, passord));
 
   CREATE TABLE BRUKER (
