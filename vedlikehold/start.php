@@ -22,7 +22,7 @@
   </head>
   <body>
     <div id="boks">
-      <header><h1>Eksamen PRG1100V</h1></header>
+      <header><h1>Obligatorisk oppgave 2</h1></header>
       <nav>
         <ul>
           <li><a href="3-1-brukerfunksjoner-hoved.php"> Hjem </a></li>
@@ -30,10 +30,13 @@
 
         <h3>Brukerfunksjoner</h3>
         <ul>
+          <li><a href="hotell.php"> Hotell </a></li>
+          <li><a href="hotellromtype.php"> HotellRomType </a></li>
+          <li><a href="rom.php"> Rom </a></li>
+          <li><a href="romtype.php"> Romtype </a></li></br>
+
           <li><a href="registrer-data.php"> Registre data </a></li>
           <li><a href="vis-data.php"> Vis data </a></li>
-          <li><a href="vis-kunder.php"> Vis kunder </a></li>
-          <li><a href="vis-bestillinger.php"> Vis bestillinger </a></li>
           <li><a href="endre-data.php"> Endre data </a></li>
           <li><a href="slette-data.php"> Slette data </a></li> </br></br>
 

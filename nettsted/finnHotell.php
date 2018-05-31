@@ -14,8 +14,8 @@ include("start.html");
 <?php
 	if(isset($_POST["finnStedKnapp"]))
 		{
-
 			include("db-tilkobling.php");
+
 			$sted=$_POST["sted"];
 
 			$sqlSetning="SELECT * FROM hotell WHERE sted='$sted';";
@@ -27,11 +27,7 @@ include("start.html");
 			print("<br/>");
 			print("<form method='post' action='' id='finnHotellSkjema' name='finnHotellSkjema'>");
 			print("Sted <input type='text' value='$sted' id='sted' name='sted' readonly /><br/>");
-			print("Sted <input type='text' value='$hotellnavn' id='sted' name='sted' readonly /><br/>");
-			print("Hotellnavn <select name='hotellnavn' id='hotellnavn'>");
-				include("dynamiskeFunksjoner1.php"); listeboksHotellnavn($sted);
-			print("</select> <br/>");
-			print("Sted <input type='text' value='$sted' id='sted' name='sted' readonly /><br/>");
+			print("Hotellnavn <input type='text' value='$hotellnavn' id='hotellnavn' name='hotellnavn' required /><br/>");
 			print("<input type='submit' value='Hotell' id='finnHotellKnapp' name='finnHotellKnapp'>");
 			print("</form>");
 		}
@@ -41,14 +37,19 @@ include("start.html");
 				$sted=$_POST["sted"];
 				$hotellnavn=$_POST["hotellnavn"];
 
-
+				if(!$sted || !$hotellnavn)
+					{
+						print("Alle felt m&aring; fylles ut");
+					}
+				else
+					{
 						include("db-tilkobling.php");
 
 						$sqlSetning="UPDATE hotell SET hotellnavn='$hotellnavn' WHERE sted='$sted';";
 						mysqli_query($db,$sqlSetning) or die ("Ikke mulig &aring; endre data i databasen");
 
 						print("Informasjon for sted $sted er endret <br/>");
-
+					}
 			}
 
 include("slutt.html");
