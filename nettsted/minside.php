@@ -36,6 +36,7 @@ else
 <br />
 <li><a href="slettHotellbestilling.php">Slett hotellbestillinger</a></li>
 <br />
+<li><a href="milenaBestillHotell.php">Milena bestill hotell</a></li>
 <br />
 <br />
 <br />

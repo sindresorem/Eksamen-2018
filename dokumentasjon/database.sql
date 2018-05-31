@@ -57,3 +57,9 @@ CREATE TABLE LAND (
   CREATE TABLE DATO (
   dato DATE NOT NULL,
   PRIMARY KEY (dato));
+
+  CREATE TABLE MILENABESTILLHOTELL (
+    brukernavn VARCHAR(25) NOT NULL,
+    romtype VARCHAR(15) NOT NULL,
+    dato NOT NULL,
+  PRIMARY KEY (brukernavn, romtype)));
