@@ -16,18 +16,17 @@
 
  <form method="post" action="" id="finnKnapp" name="finnKnapp" onSubmit="return validerData()">
    Datatype <select name="data" id="data">
-
     <option value="Hotell">Hotell</option>
     <option value="Romtype">Romtype</option>
     <option value="Hotellromtype">Hotellromtype</option>
     <option value="Rom">Rom</option>
+    <?php include("dynamiske-funksjoner.php"); listeboksData(); ?>
 
-    <?php include("dynamiske-funksjoner.php"); listeboksHotell(); ?>
-    <?php include("dynamiske-funksjoner.php"); listeboksRomtype(); ?>
-    <?php include("dynamiske-funksjoner.php"); listeboksHotellRomType(); ?>
-    <?php include("dynamiske-funksjoner.php"); listeboksRom(); ?>
-
+<<<<<<< HEAD
+  </select> <br />
+=======
 </select> <br />
+>>>>>>> 53ad9fcf6f55b50bce47b270b459f64bb224cc01
 
   <input type="submit" value="Velg Data" id="finnDataKnapp" name=" finnDataKnapp" />
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br/>
@@ -39,10 +38,11 @@
 <?php
   if (isset($_POST ["finnDataKnapp"]))
     {
+    //  $hotell=$_POST ["hotell"];
 
       include("database-tilkobling.php");
 
-      $sqlSetning="SELECT * FROM hotell;";
+      $sqlSetning="SELECT * FROM hotell WHERE hotellnavn='$hotellnavn';";
       $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra databasen");
 
       $antallRader=mysqli_num_rows($sqlResultat);
@@ -53,9 +53,9 @@
 
           $antallRader=mysqli_num_rows($sqlResultat);
 
-          $hotellnavn=$rad["hotellnavn"];
+          $hotellnavn=$rad["hotellnavn"];        
 
-          print ("<form method='post' action='' id='registrerHotell' name='registrerHotell'>");
+          print ("<form method='post' action='' id='endreHotell' name='endreHotell'>");
           print ("Hotellnavn <input type='text' value='' name='hotellnavn' id='hotellnavn' required /> <br />");
           print ("Sted <input type='text' value='' name='sted' id='sted'  /> <br />");
           print ("<input type='submit' value='Registrer data' name='registrerDataKnapp' id='registrerDataKnapp'>");

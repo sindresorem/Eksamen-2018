@@ -41,7 +41,7 @@ for ($r=1;$r<=$antallRader;$r++)
 
     $antallRader=mysqli_num_rows($sqlResultat);
 
-    $hotellnavn=$rad["hotellnavn"];
+    $filnavn=$rad["filnavn"];
 
   }
 
