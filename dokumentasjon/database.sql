@@ -1,11 +1,12 @@
-CREATE TABLE PLASSERING (
- sted VARCHAR(25) NOT NULL,
- land VARCHAR(20) NOT NULL,
- PRIMARY KEY (sted));
+CREATE TABLE LAND (
+ land VARCHAR(25) NOT NULL,
+ PRIMARY KEY (land));
 
-CREATE TABLE STED (
-sted VARCHAR(25) NOT NULL,
-PRIMARY KEY (sted));
+ CREATE TABLE PLASSERING (
+ sted VARCHAR(25) NOT NULL,
+ land VARCHAR(25) NOT NULL,
+ PRIMARY KEY (sted)
+ FOREIGN KEY (land) REFERENCES LAND(land));
 
   CREATE TABLE HOTELL (
   hotellnavn VARCHAR(40) NOT NULL,
@@ -13,7 +14,7 @@ PRIMARY KEY (sted));
   PRIMARY KEY (hotellnavn));
 
   CREATE TABLE ROMTYPE (
-    romtype VARCHAR(20) NOT NULL,
+  romtype VARCHAR(20) NOT NULL,
   PRIMARY KEY (romtype));
 
   CREATE TABLE HOTELLROMTYPE (
@@ -36,17 +37,14 @@ PRIMARY KEY (sted));
   passord VARCHAR(30) NOT NULL,
   PRIMARY KEY (brukernavn));
 
-  CREATE TABLE STED (
-  sted VARCHAR(25) NOT NULL,
-  PRIMARY KEY (sted));
-
-  CREATE TABLE KUNDE (
+  CREATE TABLE BESTILLING (
   brukernavn VARCHAR(25) NOT NULL,
-  passord VARCHAR(25) NOT NULL,
+  land VARCHAR (29) NOT NULL,
   sted VARCHAR(25) NOT NULL,
   hotellnavn VARCHAR(25) NOT NULL,
   romtype VARCHAR(20) NOT NULL,
   antallrom INT(2) NOT NULL,
+  romnr INT(3) NOT NULL,
   datofra DATE NOT NULL,
   datotil DATE NOT NULL,
   PRIMARY KEY (brukernavn, passord));
@@ -55,8 +53,6 @@ PRIMARY KEY (sted));
   brukernavn VARCHAR(25) NOT NULL,
   passord VARCHAR (25) NOT NULL,
   PRIMARY KEY (brukernavn));
-
-
 
   CREATE TABLE DATO (
   dato DATE NOT NULL,

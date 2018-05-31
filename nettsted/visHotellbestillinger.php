@@ -14,7 +14,7 @@ include("start.html");
 include("db-tilkobling.php");
 ?>
 
-<form method="post" action="visHotell" id="visHotell" name="visHotell" onSubmit="return validerBestillHotell()">
+<form method="post" action="visHotell" id="visHotell" name="visHotell">
 			    <div>
 					<h1>Dine hotellbestillinger</h1>
 			</form>
@@ -32,20 +32,21 @@ $antallRader=mysqli_num_rows($sqlResultat);
 
 print("<h3>Mine hotellbestillinger</h3>");
 print("<table border=1>");
-print("<tr><th align=left>sted</th><th align=left>hotellnavn</th><th align=left>romtype</th><th align=left>antall rom</th><th align=left>dato</th></tr>");
+print("<tr><th align=left>land</th><th align=left>sted</th><th align=left>hotellnavn</th><th align=left>romtype</th><th align=left>antall rom</th><th align=left>dato</th></tr>");
 
 }
 
 for ($r=1;$r<=$antallRader;$r++)
 {
 	$rad=mysqli_fetch_array($sqlResultat);
+  $land=$rad["land"];
   $sted=$rad["sted"];
 	$hotellnavn=$rad["hotellnavn"];
 	$romtype=$rad["romtype"];
   $antallrom=$rad["antallrom"];
   $dato=$rad["dato"];
 
-	print("<tr><td>$sted</td><td>$hotellnavn</td><td>$romtype</td><td>$antallrom</td><td>$dato</td></tr>");
+	print("<tr><td>$land</td><td>$sted</td><td>$hotellnavn</td><td>$romtype</td><td>$antallrom</td><td>$dato</td></tr>");
 }
 
 print("</table>");
