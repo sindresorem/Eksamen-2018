@@ -17,11 +17,11 @@ function listeboksHotellnavn($valgtSted)
 
         if($sted==$valgtSted)
 					{
-						print("<option value='$sted' selected>$hotellnavn $sted</option>");
+						print("<option value='$hotellnavn' selected>$hotellnavn $sted</option>");
 					}
 				else
 					{
-						print("<option value='$sted'>$hotellnavn $sted</option>");
+						print("<option value='$hotellnavn'>$hotellnavn $sted</option>");
 					}
         //print("<option value='$sted', '$hotellnavn'>$hotellnavn</option>");
       }

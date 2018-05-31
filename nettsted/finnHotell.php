@@ -28,26 +28,46 @@ include("start.html");
 			print("<form method='post' action='' id='finnHotellSkjema' name='finnHotellSkjema'>");
 			print("Sted <input type='text' value='$sted' id='sted' name='sted' readonly /><br/>");
 			print("Sted <input type='text' value='$hotellnavn' id='sted' name='sted' readonly /><br/>");
-			print("Hotellnavn <select name='hotellmavn' id='hotellnavn'>");
+			print("Hotellnavn <select name='hotellnavn' id='hotellnavn'>");
 				include("dynamiskeFunksjoner1.php"); listeboksHotellnavn($sted);
 			print("</select> <br/>");
-			print("Sted <input type='text' value='$sted' id='sted' name='sted' readonly /><br/>");
 			print("<input type='submit' value='Hotell' id='finnHotellKnapp' name='finnHotellKnapp'>");
 			print("</form>");
 		}
 
 		if(isset($_POST["finnHotellKnapp"]))
 			{
-				$sted=$_POST["sted"];
+				include("db-tilkobling.php");
 				$hotellnavn=$_POST["hotellnavn"];
 
+						$sqlSetning="SELECT * FROM hotellromtype WHERE hotellnavn='$hotellnavn';";
+						$sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig &aring; hente data fra database");
+						$antallRader=mysqli_num_rows($sqlResultat);
 
-						include("db-tilkobling.php");
+						if($antallRader==0)
+					{
+						print("<h3>Ingen rom registrert på hotell: $hotellnavn</h3>");
+					}
+				else
+					{
 
-						$sqlSetning="UPDATE hotell SET hotellnavn='$hotellnavn' WHERE sted='$sted';";
-						mysqli_query($db,$sqlSetning) or die ("Ikke mulig &aring; endre data i databasen");
+					print("<h3>De forskjellige romtypene på hotell: $hotellnavn</h3>");
+					print("<table border=1>");
+					print("<tr><th align=left>Hotellnavn</th><th align=left>Romtype</th></tr>");
 
-						print("Informasjon for sted $sted er endret <br/>");
+					for($r=1;$r<=$antallRader;$r++)
+						{
+							$rad=mysqli_fetch_array($sqlResultat);
+							$hotellnavn=$rad["hotellnavn"];
+							$romtype=$rad["romtype"];
+
+
+							print("<tr><td>$hotellnavn </td><td>$romtype </td></tr>");
+						}
+
+					print("</table>");
+				}
+
 
 			}
 
