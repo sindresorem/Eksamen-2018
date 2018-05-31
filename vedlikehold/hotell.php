@@ -14,7 +14,7 @@
 
     <h5>Brukerfunksjoner for hotell</h5>
     <ul>
-
+      
       <li><a href="registrer-hotell.php"> Registrer hotell </a></li>
       <li><a href="vis-hotell-data.php"> Vis data </a></li>
       <li><a href="endre-hotell-data.php"> Endre data </a></li>

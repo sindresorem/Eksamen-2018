@@ -14,7 +14,6 @@
 
     <h5>Brukerfunksjoner data</h5>
     <ul>
-
       <li><a href="registrer-romtype.php"> Registrer romtype </a></li>
       <li><a href="vis-romtype-data.php"> Vis data </a></li>
       <li><a href="endre-romtype-data.php"> Endre data </a></li>
@@ -57,7 +56,7 @@
 
           }
 
-          if (isset($_POST ["endreRomKnapp"]))
+          if (isset($_POST ["endreRomTypeKnapp"]))
            {
 
           $romtype=$_POST ["romtype"];

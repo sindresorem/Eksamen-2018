@@ -89,7 +89,26 @@ function  listeboksRomType()
 }
 
 
+function  listeboksSted()
+{
+  include("database-tilkobling.php");
 
+  $sqlSetning="SELECT * FROM romtype ORDER BY romtype;";
+  $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra database");
+
+  $antallRader=mysqli_num_rows($sqlResultat);
+
+  for ($r=1;$r<=$antallRader;$r++)
+  {
+    $rad=mysqli_fetch_array($sqlResultat);
+    $sted=$rad["sted"];
+
+
+
+    print("<option value='$sted'>$sted</option>");
+    }
+
+}
 
 
 

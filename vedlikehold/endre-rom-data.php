@@ -14,7 +14,6 @@
 
     <h5>Brukerfunksjoner data</h5>
     <ul>
-
       <li><a href="registrer-rom.php"> Registrer rom </a></li>
       <li><a href="vis-rom-data.php"> Vis data </a></li>
       <li><a href="endre-rom-data.php"> Endre data </a></li>
