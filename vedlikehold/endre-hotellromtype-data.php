@@ -14,7 +14,6 @@
 
     <h5>Brukerfunksjoner for hotellromtype</h5>
     <ul>
-
       <li><a href="registrer-hotellromtype.php"> Registrer hotellromtype </a></li>
       <li><a href="vis-hotellromtype-data.php"> Vis data </a></li>
       <li><a href="endre-hotellromtype-data.php"> Endre data </a></li>

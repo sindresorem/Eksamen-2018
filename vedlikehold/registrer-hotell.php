@@ -26,8 +26,10 @@
 
 <form method="post" action="" id="registrerHotellSkjema" name="registrerHotellSkjema">
   Hotellnavn <input type="text" id="hotellnavn" name="hotellnavn" required /> <br/>
-  Sted <input type="text" id="sted" name="sted" required /> <br/>
-
+  Velg sted  <select name="sted" id="sted" required>
+    <option value="">Velg sted</option>
+    <?php include("dynamiske-funksjoner.php"); listeboksRomType(); ?>
+  </select>  <br/>
   <input type="submit" value="Registrer data" id="registrerHotellKnapp" name="registrerHotellKnapp" />
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
