@@ -17,6 +17,7 @@ PRIMARY KEY (sted));
   PRIMARY KEY (romtype));
 
   CREATE TABLE HOTELLROMTYPE (
+    hotellnavn VARCHAr(40) NOT NULL,
     romtype VARCHAr(20) NOT NULL,
     antallrom INT(3) NOT NULL,
   PRIMARY KEY (hotellnavn, romtype),
