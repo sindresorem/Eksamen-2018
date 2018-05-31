@@ -1,44 +1,40 @@
+CREATE TABLE PLASSERING (
+ sted VARCHAR(25) NOT NULL,
+ land VARCHAR(20) NOT NULL,
+ PRIMARY KEY (sted));
 
-<<<<<<< HEAD
 CREATE TABLE STED (
 sted VARCHAR(25) NOT NULL,
 PRIMARY KEY (sted));
 
-CREATE TABLE HOTELL (
-=======
   CREATE TABLE HOTELL (
->>>>>>> 6b21848d33aac32163f1018f9c8e510312738a41
   hotellnavn VARCHAR(40) NOT NULL,
   sted VARCHAR(25) NOT NULL,
-  PRIMARY KEY (hotellnavn),
-  FOREIGN KEY (sted) REFERENCES STED(sted));
+  PRIMARY KEY (hotellnavn));
 
   CREATE TABLE ROMTYPE (
-  romtype VARCHAR(20) NOT NULL,
+    romtype VARCHAR(20) NOT NULL,
   PRIMARY KEY (romtype));
 
   CREATE TABLE HOTELLROMTYPE (
-  hotellnavn VARCHAR(40) NOT NULL,
-  romtype VARCHAR(20) NOT NULL,
-  antallrom INT(3) NOT NULL,
+    hotellnavn VARCHAr(40) NOT NULL,
+    romtype VARCHAr(20) NOT NULL,
+    antallrom INT(3) NOT NULL,
   PRIMARY KEY (hotellnavn, romtype),
-  FOREIGN KEY (hotellnavn) REFERENCES hotell(hotellnavn),
-  FOREIGN KEY (romtype) REFERENCES romtype(romtype));
+  FOREIGN KEY (hotellnavn) REFERENCES HOTELL(hotellnavn),
+  FOREIGN KEY (romtype) REFERENCES ROMTYPE(romtype));
 
   CREATE TABLE ROM (
   hotellnavn VARCHAR(25) NOT NULL,
   romtype VARCHAR(15) NOT NULL,
   romnr INT(3) NOT NULL,
   PRIMARY KEY (hotellnavn, romnr),
-  FOREIGN KEY (hotellnavn, romtype) REFERENCES hotellromtype(hotellnavn, romtype));
+  FOREIGN KEY (hotellnavn, romtype) REFERENCES HOTELLROMTYPE(hotellnavn, romtype));
 
   CREATE TABLE ADMIN (
   brukernavn VARCHAR(25) NOT NULL,
-<<<<<<< HEAD
-  passord VARCHAR(30) NOT NULL));
-=======
   passord VARCHAR(30) NOT NULL,
-  PRIMARY KEY (brukernavn))
+  PRIMARY KEY (brukernavn));
 
   CREATE TABLE STED (
   sted VARCHAR(25) NOT NULL,
@@ -51,11 +47,17 @@ CREATE TABLE HOTELL (
   hotellnavn VARCHAR(25) NOT NULL,
   romtype VARCHAR(20) NOT NULL,
   antallrom INT(2) NOT NULL,
-  dato DATE,
+  datofra DATE NOT NULL,
+  datotil DATE NOT NULL,
   PRIMARY KEY (brukernavn, passord));
 
-  CREATE TABLE bruker (
+  CREATE TABLE BRUKER (
   brukernavn VARCHAR(25) NOT NULL,
   passord VARCHAR (25) NOT NULL,
   PRIMARY KEY (brukernavn));
->>>>>>> 6b21848d33aac32163f1018f9c8e510312738a41
+
+
+
+  CREATE TABLE DATO (
+  dato DATE NOT NULL,
+  PRIMARY KEY (dato));

@@ -14,8 +14,8 @@ include("start.html");
 <?php
 	if(isset($_POST["finnStedKnapp"]))
 		{
-
 			include("db-tilkobling.php");
+
 			$sted=$_POST["sted"];
 
 			$sqlSetning="SELECT * FROM hotell WHERE sted='$sted';";
@@ -27,10 +27,14 @@ include("start.html");
 			print("<br/>");
 			print("<form method='post' action='' id='finnHotellSkjema' name='finnHotellSkjema'>");
 			print("Sted <input type='text' value='$sted' id='sted' name='sted' readonly /><br/>");
+<<<<<<< HEAD
 			print("Sted <input type='text' value='$hotellnavn' id='sted' name='sted' readonly /><br/>");
 			print("Hotellnavn <select name='hotellnavn' id='hotellnavn'>");
 				include("dynamiskeFunksjoner1.php"); listeboksHotellnavn($sted);
 			print("</select> <br/>");
+=======
+			print("Hotellnavn <input type='text' value='$hotellnavn' id='hotellnavn' name='hotellnavn' required /><br/>");
+>>>>>>> 72d15a1a3c3d638cc2fa9aaa927b55420f4a80d5
 			print("<input type='submit' value='Hotell' id='finnHotellKnapp' name='finnHotellKnapp'>");
 			print("</form>");
 		}
@@ -40,6 +44,7 @@ include("start.html");
 				include("db-tilkobling.php");
 				$hotellnavn=$_POST["hotellnavn"];
 
+<<<<<<< HEAD
 						$sqlSetning="SELECT * FROM hotellromtype WHERE hotellnavn='$hotellnavn';";
 						$sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig &aring; hente data fra database");
 						$antallRader=mysqli_num_rows($sqlResultat);
@@ -64,11 +69,25 @@ include("start.html");
 
 							print("<tr><td>$hotellnavn </td><td>$romtype </td></tr>");
 						}
+=======
+				if(!$sted || !$hotellnavn)
+					{
+						print("Alle felt m&aring; fylles ut");
+					}
+				else
+					{
+						include("db-tilkobling.php");
+>>>>>>> 72d15a1a3c3d638cc2fa9aaa927b55420f4a80d5
 
 					print("</table>");
 				}
 
+<<<<<<< HEAD
 
+=======
+						print("Informasjon for sted $sted er endret <br/>");
+					}
+>>>>>>> 72d15a1a3c3d638cc2fa9aaa927b55420f4a80d5
 			}
 
 include("slutt.html");
