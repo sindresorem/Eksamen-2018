@@ -12,16 +12,17 @@
 
     ?>
 
-    <h5>Brukerfunksjoner for hotellromtype</h5>
+    <h5>Endring av data</h5>
     <ul>
-      <li><a href="registrer-hotellromtype.php"> Registrer hotellromtype </a></li>
-      <li><a href="vis-hotellromtype-data.php"> Vis data </a></li>
-      <li><a href="endre-hotellromtype-data.php"> Endre data </a></li>
-      <li><a href="slett-hotellromtype-data.php"> Slett data </a></li>
+      <li><a href="endre-sted-data.php"> Endre sted </a></li>
+      <li><a href="endre-hotell-data.php"> Endre hotell </a></li>
+      <li><a href="endre-hotellromtype-data.php"> Endre hotellromtype </a></li>
+      <li><a href="endre-rom-data.php"> Endre rom </a></li>
+      <li><a href="endre-romtype-data.php"> Endre romtype </a></li>
 
     </ul>
 
-    <h2>Endre hotellromtype</h2>
+    <h3>Endre hotellromtype</h3>
 
     <form method="post" action="" id="finnHotellRomType" name="finnHotellRomType">
       Hotellromtype

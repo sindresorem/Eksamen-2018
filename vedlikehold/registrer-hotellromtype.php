@@ -12,20 +12,25 @@
 
     ?>
 
-    <h5>Brukerfunksjoner for hotellromtype</h5>
+    <h5>Registrering av data</h5>
     <ul>
 
+      <li><a href="registrer-sted.php"> Registrer sted </a></li>
+      <li><a href="registrer-hotell.php"> Registrer hotell </a></li>
       <li><a href="registrer-hotellromtype.php"> Registrer hotellromtype </a></li>
-      <li><a href="vis-hotellromtype-data.php"> Vis data </a></li>
-      <li><a href="endre-hotellromtype-data.php"> Endre data </a></li>
-      <li><a href="slett-hotellromtype-data.php"> Slett data </a></li>
+      <li><a href="registrer-rom.php"> Registrer rom </a></li>
+      <li><a href="registrer-romtype.php"> Registrer romtype </a></li>
 
     </ul>
 
       <h3>Registrer hotellromtypedata </h3>
 
     <form method="post" action="" id="registrerHotellRomtypeSkjema" name="registrerHotellRomtypeSkjema">
-      Hotellnavn <input type="text" id="hotellnavn" name="hotellnavn" required /> <br/>
+      Hotellnavn
+      <select name="hotellnavn" id="hotellnavn" required>
+        <option value="">Velg hotellnavn</option>
+        <?php include("dynamiske-funksjoner.php"); listeboksHotellRomType(); ?>
+      </select>  <br/>
       Romtype <input type="text" id="romtype" name="romtype" required /> <br/>
       Antall rom <input type="text" id="antallrom" name="antallrom" required /> <br/>
 

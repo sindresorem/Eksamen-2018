@@ -45,6 +45,8 @@ function  listeboksHotellRomType()
 }
 
 
+
+
 function  listeboksRom()
 {
   include("database-tilkobling.php");
@@ -93,7 +95,7 @@ function  listeboksSted()
 {
   include("database-tilkobling.php");
 
-  $sqlSetning="SELECT * FROM romtype ORDER BY romtype;";
+  $sqlSetning="SELECT * FROM plassering ORDER BY sted;";
   $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra database");
 
   $antallRader=mysqli_num_rows($sqlResultat);
@@ -102,10 +104,11 @@ function  listeboksSted()
   {
     $rad=mysqli_fetch_array($sqlResultat);
     $sted=$rad["sted"];
+    $land=$rad["land"];
 
 
 
-    print("<option value='$sted'>$sted</option>");
+    print("<option value='$sted'>$sted $land</option>");
     }
 
 }

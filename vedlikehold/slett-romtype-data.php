@@ -12,17 +12,18 @@
 
     ?>
 
-    <h5>Brukerfunksjoner data</h5>
+    <h5>Sletting av data</h5>
     <ul>
 
-      <li><a href="registrer-romtype.php"> Registrer romtype </a></li>
-      <li><a href="vis-romtype-data.php"> Vis data </a></li>
-      <li><a href="endre-romtype-data.php"> Endre data </a></li>
-      <li><a href="slett-romtype-data.php"> Slett data </a></li>
+      <li><a href="slett-sted-data.php"> Slett sted </a></li>
+      <li><a href="slett-hotell-data.php"> Slett hotell </a></li>
+      <li><a href="slett-hotellromtype-data.php"> Slett hotellromtype </a></li>
+      <li><a href="slett-rom-data.php"> Slett rom </a></li>
+      <li><a href="slett-romtype-data.php"> Slett romtype </a></li>
 
     </ul>
 
-    <h2>Slett rom</h2>
+    <h2>Slett romtype</h2>
 
          <form method="post" action="" id="slettRomType" name="slettRomType" onSubmit="return bekreft()">
            Hotell
@@ -53,5 +54,5 @@
       }
 
 
-  
+
      ?>
