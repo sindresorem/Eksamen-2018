@@ -23,30 +23,30 @@
 
     </ul>
 
-
     <?php
 
     include("database-tilkobling.php");
 
-          $sqlSetning="SELECT * FROM romtype;";
-          $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra databasen");
+    $sqlSetning="SELECT * FROM plassering;";
+    $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra databasen");
 
-          $antallRader=mysqli_num_rows($sqlResultat);
+    $antallRader=mysqli_num_rows($sqlResultat);
 
-          print ("<h2>Registrert romtypedata</h2>");
-          print ("<table border=1>");
-          print ("<tr><th align=left>Romtype</th></tr>");
+    print ("<h2>Registrert stedsdata</h2>");
+    print ("<table border=1>");
+    print ("<tr><th align=left>Sted</th> <th align=left>Land</th></tr>");
 
-          for ($r=1;$r<=$antallRader;$r++)
-            {
-              $rad=mysqli_fetch_array($sqlResultat);
-              $romtype=$rad["romtype"];
+    for ($r=1;$r<=$antallRader;$r++)
+      {
+        $rad=mysqli_fetch_array($sqlResultat);
+        $sted=$rad["sted"];
+        $land=$rad["land"];
 
 
+        print ("<tr><td> $sted </td><td> $land </td></tr>");
+      }
+        print ("</table>");
 
-              print ("<tr><td> $romtype </td></tr>");
-            }
-              print ("</table>");
 
 
     include ("slutt.php");

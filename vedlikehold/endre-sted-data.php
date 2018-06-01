@@ -22,49 +22,49 @@
 
     </ul>
 
-    <h3>Endre hotell</h3>
+    <h3>Endre sted</h3>
 
-    <form method="post" action="" id="finnHotell" name="finnHotell">
-      Hotell
-      <select name="brukernavn" id="brukernavn" required>
-        <option value="">Velg hotell</option>
-        <?php include("dynamiske-funksjoner.php"); listeboksHotell(); ?>
+    <form method="post" action="" id="finnSted" name="finnSted">
+      Sted
+      <select name="sted" id="sted" required>
+        <option value="">Velg sted</option>
+        <?php include("dynamiske-funksjoner.php"); listeboksSted(); ?>
       </select>  <br/>
-      <input type="submit"  value="Finn hotell" name="finnHotellKnapp" id="finnHotellKnapp">
+      <input type="submit"  value="Finn sted" name="finnStedKnapp" id="finnStedKnapp">
       <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
     </form>
 
     <?php
-   if(isset($_POST ["finnHotellKnapp"]))
+   if(isset($_POST ["finnStedKnapp"]))
      {
        //$hotellnavn=$_POST ["hotellnavn"];
 
 
        include("database-tilkobling.php");
 
-       $sqlSetning="SELECT * FROM hotell;";
+       $sqlSetning="SELECT * FROM plassering;";
        $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra database");
 
        $rad=mysqli_fetch_array($sqlResultat);
 
-       $hotellnavn=$rad["hotellnavn"];
        $sted=$rad["sted"];
+       $land=$rad["land"];
 
-       print ("<form method='post' action='' id='endreHotell' name='endreHotell'>");
-       print ("Hotellnavn <input type='text' value='$hotellnavn' name='hotellnavn' id='hotellnavn' /> <br />");
-       print ("Sted <input type='text' value='$sted' name='sted' id='sted' required /> <br />");
-       print ("<input type='submit' value='Endre hotell' name='endreHotellKnapp' id='endreHotellKnapp'>");
+       print ("<form method='post' action='' id='endreSted' name='endreSted'>");
+       print ("Sted <input type='text' value='$sted' name='sted' id='sted' /> <br />");
+       print ("Land <input type='text' value='$land' name='land' id='land' required /> <br />");
+       print ("<input type='submit' value='Endre sted' name='endreStedKnapp' id='endreStedKnapp'>");
        print ("</form>");
 
      }
 
-     if (isset($_POST ["endreHotellKnapp"]))
+     if (isset($_POST ["endreStedKnapp"]))
       {
-     $hotellnavn=$_POST ["hotellnavn"];
      $sted=$_POST ["sted"];
+     $land=$_POST ["land"];
 
 
-     if (!$hotellnavn || !$sted)
+     if (!$sted || !$land)
        {
          print ("Alle felt må fylles ut");
        }
@@ -73,10 +73,10 @@
        {
          include("database-tilkobling.php");
 
-         $sqlSetning="UPDATE hotell SET hotellnavn='$hotellnavn' , sted='$sted';";
+         $sqlSetning="UPDATE plassering SET sted='$sted' , land='$land';";
          mysqli_query($db,$sqlSetning) or die ("Ikke mulig å endre data i databasen");
 
-            print ("Hotell endret <br />");
+            print ("Sted endret <br />");
        }
      }
 

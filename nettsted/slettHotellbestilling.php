@@ -11,9 +11,6 @@ else
 {
 include("start.html")
 ?>
-
-<script src="funksjoner.js"></script>
-
 <h2>Slett hotellbestillinger</h2>
 <h3>Velg hvilken hotellbestilling du vil slette fra listen under</h3>
 

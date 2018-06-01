@@ -36,6 +36,10 @@ else
 <br />
 <li><a href="slettHotellbestilling.php">Slett hotellbestillinger</a></li>
 <br />
+<li><a href="milenaBestillHotell.php">Milena bestill hotell</a></li>
+<br />
+<br />
+<li><a href="milenaBestillHotell2.php">Milena bestill hotell 2</a></li>
 <br />
 <br />
 <br />
