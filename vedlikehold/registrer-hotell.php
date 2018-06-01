@@ -28,7 +28,7 @@
   Hotellnavn <input type="text" id="hotellnavn" name="hotellnavn" required /> <br/>
   Velg sted  <select name="sted" id="sted" required>
     <option value="">Velg sted</option>
-    <?php include("dynamiske-funksjoner.php"); listeboksRomType(); ?>
+    <?php include("dynamiske-funksjoner.php"); listeboksSted(); ?>
   </select>  <br/>
   <input type="submit" value="Registrer data" id="registrerHotellKnapp" name="registrerHotellKnapp" />
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />

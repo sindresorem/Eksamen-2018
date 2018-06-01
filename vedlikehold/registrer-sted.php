@@ -45,7 +45,7 @@
            else {
              include("database-tilkobling.php"); //tilkobling til database og valg av databaser
 
-             $sqlSetning="SELECT * FROM romtype WHERE romtype='$romtype';";
+             $sqlSetning="SELECT * FROM sted WHERE sted='$sted';";
              $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å registrere data i db.");
              $antallRader=mysqli_num_rows($sqlResultat);
 
@@ -57,7 +57,7 @@
             else
             {
               include("database-tilkobling.php");
-              $sqlSetning="INSERT INTO romtype(romtype) VALUES('$romtype');";
+              $sqlSetning="INSERT INTO sted(sted) VALUES('$sted');";
               mysqli_query($db,$sqlSetning) or die ("Ikke mulig å registrere data i databasen");
 
               print ("Følgene sted er nå registrert: $sted");

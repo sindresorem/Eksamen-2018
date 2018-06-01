@@ -26,8 +26,7 @@
       <form method="post" action="" id="finnRomType" name="finnRomType">
         Hotell
         <select name="romtype" id="romtype" required>
-          <option value="">Velg romtype</option>
-          <?php include("dynamiske-funksjoner.php"); listeboksRomType(); ?>
+          <?php include("dynamiske-funksjoner.php"); listeboksRomType($romtype); ?>
         </select>  <br/>
         <input type="submit"  value="Finn romtype" name="finnRomTypeKnapp" id="finnRomTypeKnapp">
         <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
@@ -39,8 +38,9 @@
           {
 
             include("database-tilkobling.php");
+            $romtype=$_POST ["romtype"];
 
-            $sqlSetning="SELECT * FROM romtype;";
+            $sqlSetning="SELECT * FROM romtype WHERE romtype='$romtype';";
             $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra database");
 
             $rad=mysqli_fetch_array($sqlResultat);

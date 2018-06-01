@@ -67,7 +67,7 @@ function  listeboksRom()
 
 }
 
-function  listeboksRomType()
+function  listeboksRomType($romtype)
 {
   include("database-tilkobling.php");
 
@@ -93,7 +93,7 @@ function  listeboksSted()
 {
   include("database-tilkobling.php");
 
-  $sqlSetning="SELECT * FROM romtype ORDER BY romtype;";
+  $sqlSetning="SELECT * FROM sted ORDER BY sted;";
   $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å hente data fra database");
 
   $antallRader=mysqli_num_rows($sqlResultat);
