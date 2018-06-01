@@ -48,11 +48,8 @@
           else {
              include("database-tilkobling.php"); //tilkobling til database og valg av databaser
 
-<<<<<<< HEAD
-             $sqlSetning="SELECT * FROM sted WHERE sted='$sted';";
-=======
              $sqlSetning="SELECT * FROM plassering WHERE land='$land';";
->>>>>>> 785693b267d9682502297c6faa524b599418c9c1
+
              $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å registrere data i db.");
              $antallRader=mysqli_num_rows($sqlResultat);
 
@@ -64,11 +61,9 @@
             else
             {
               include("database-tilkobling.php");
-<<<<<<< HEAD
-              $sqlSetning="INSERT INTO sted(sted) VALUES('$sted');";
-=======
+
               $sqlSetning="INSERT INTO plassering(sted,land) VALUES('$sted','$land');";
->>>>>>> 785693b267d9682502297c6faa524b599418c9c1
+
               mysqli_query($db,$sqlSetning) or die ("Ikke mulig å registrere data i databasen");
 
               print ("Følgene sted er nå registrert: $land, $sted");

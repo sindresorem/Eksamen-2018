@@ -26,7 +26,7 @@
 
     <form method="post" action="" id="finnHotellRomType" name="finnHotellRomType">
       Hotellromtype
-      <select name="brukernavn" id="brukernavn" required>
+      <select name="hotellromtype" id="hotellromtype" required>
         <option value="">Velg hotellromtype</option>
         <?php include("dynamiske-funksjoner.php"); listeboksHotellRomType(); ?>
       </select>  <br/>
@@ -53,7 +53,7 @@
            print ("<form method='post' action='' id='endreHotell' name='endreHotell'>");
            print ("Hotellnavn <input type='text' value='$hotellnavn' name='hotellnavn' id='hotellnavn' /> <br />");
            print ("Romtype <input type='text' value='$romtype' name='romtype' id='romtype' required /> <br />");
-           print ("Antall rom <input type='text' value='$antallrom' name='antallrom' id='antallrom' required /> <br />");
+           print ("Antall rom <input type='number' min='0' value='$antallrom' name='antallrom' id='antallrom' required /> <br />");
            print ("<input type='submit' value='Endre hotellromtype' name='endreHotellRomTypeKnapp' id='endreHotellRomTypeKnapp'>");
            print ("</form>");
 

@@ -29,10 +29,16 @@
       Hotellnavn
       <select name="hotellnavn" id="hotellnavn" required>
         <option value="">Velg hotellnavn</option>
-        <?php include("dynamiske-funksjoner.php"); listeboksHotellRomType(); ?>
+        <?php include("dynamiske-funksjoner.php"); listeboksHotell(); ?>
       </select>  <br/>
-      Romtype <input type="text" id="romtype" name="romtype" required /> <br/>
-      Antall rom <input type="text" id="antallrom" name="antallrom" required /> <br/>
+
+      Romtype
+      <select name="romtype" id="romtype" required>
+        <option value="">Velg romtype</option>
+        <?php listeboksRomType(); ?>
+        </select>  <br/>
+      Antall rom <input type="number" min="0" id="antallrom" name="antallrom" required /> <br/>
+
 
       <input type="submit" value="Registrer data" id="registrerHotellRomtypeKnapp" name="registrerHotellRomtypeKnapp" />
       <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
