@@ -26,7 +26,11 @@
       <h3>Registrer hotellromtypedata </h3>
 
     <form method="post" action="" id="registrerHotellRomtypeSkjema" name="registrerHotellRomtypeSkjema">
-      Hotellnavn <input type="text" id="hotellnavn" name="hotellnavn" required /> <br/>
+      Hotellnavn
+      <select name="hotellnavn" id="hotellnavn" required>
+        <option value="">Velg hotellnavn</option>
+        <?php include("dynamiske-funksjoner.php"); listeboksHotellRomType(); ?>
+      </select>  <br/>
       Romtype <input type="text" id="romtype" name="romtype" required /> <br/>
       Antall rom <input type="text" id="antallrom" name="antallrom" required /> <br/>
 

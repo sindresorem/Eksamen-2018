@@ -22,10 +22,11 @@
 
     </ul>
 
-    <h3>Registrer hotelldata </h3>
+    <h3>Registrer sted </h3>
 
 <form method="post" action="" id="registrerStedSkjema" name="registrerStedSkjema">
   Sted <input type="text" id="sted" name="sted" required /> <br/>
+  Land <input type="text" id="land" name="land" required /> <br/>
 
   <input type="submit" value="Registrer data" id="registrerStedKnapp" name="registrerStedKnapp" />
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
@@ -37,37 +38,38 @@
       if (isset($_POST ["registrerStedKnapp"]))
         {
           $sted=$_POST ["sted"];
+          $land=$_POST ["land"];
 
-          if (!$sted)
+          if (!$sted || !$land)
            {
              print ("Alle felt må fylles ut.");
            }
 
-           else {
+          else {
              include("database-tilkobling.php"); //tilkobling til database og valg av databaser
 
-             $sqlSetning="SELECT * FROM romtype WHERE romtype='$romtype';";
+             $sqlSetning="SELECT * FROM plassering WHERE land='$land';";
              $sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig å registrere data i db.");
              $antallRader=mysqli_num_rows($sqlResultat);
 
              if ($antallRader!=0)
              {
-               print ("Stedet: $sted er allerede i bruk, vennligst velg et annet sted.");
+               print ("$land er allerede i bruk, vennligst velg et annet sted.");
              }
 
             else
             {
               include("database-tilkobling.php");
-              $sqlSetning="INSERT INTO romtype(romtype) VALUES('$romtype');";
+              $sqlSetning="INSERT INTO plassering(sted,land) VALUES('$sted','$land');";
               mysqli_query($db,$sqlSetning) or die ("Ikke mulig å registrere data i databasen");
 
-              print ("Følgene sted er nå registrert: $sted");
+              print ("Følgene sted er nå registrert: $land, $sted");
             }
 
           }
 
-
         }
+
 
     include ("slutt.php");
   }

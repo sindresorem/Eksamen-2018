@@ -26,8 +26,17 @@
     <h3>Registrer rom </h3>
 
 <form method="post" action="" id="registrerRomSkjema" name="registrerRomSkjema">
-  Hotellnavn <input type="text" id="hotellnavn" name="hotellnavn" required /> <br/>
-  Romtype <input type="text" id="romtype" name="romtype" required /> <br/>
+  Hotellnavn
+  <select name="hotellnavn" id="hotellnavn" required>
+    <option value="">Velg hotellnavn</option>
+    <?php include("dynamiske-funksjoner.php"); listeboksHotellRomType(); ?>
+  </select>  <br/>
+  Romtype
+  <select name="romtype" id="romtype" required>
+    <option value="">Velg romtype</option>
+    <?php include("dynamiske-funksjoner.php"); listeboksRomType(); ?>
+  </select>  <br/>
+
   Romnr <input type="text" id="romnr" name="romnr" required /> <br/>
 
   <input type="submit" value="Registrer data" id="registrerRomKnapp" name="registrerRomKnapp" />
@@ -41,10 +50,10 @@
         {
           $hotellnavn=$_POST ["hotellnavn"];
           $romtype=$_POST ["romtype"];
-          $rom=$_POST ["rom"];
+          $romnr=$_POST ["romnr"];
 
 
-          if (!$hotellnavn || !$romtype || !$rom)
+          if (!$hotellnavn || !$romtype || !$romnr)
            {
              print ("Alle felt må fylles ut.");
            }
@@ -52,10 +61,10 @@
             else
             {
               include("database-tilkobling.php");
-              $sqlSetning="INSERT INTO rom(hotellnavn,romtype,rom) VALUES('$hotellnavn','$romtype','$rom');";
+              $sqlSetning="INSERT INTO rom(hotellnavn,romtype,romnr) VALUES('$hotellnavn','$romtype','$romnr');";
               mysqli_query($db,$sqlSetning) or die ("Ikke mulig å registrere data i databasen");
 
-              print ("Følgene hotell er nå registrert: $hotellnavn $romtype $rom");
+              print ("Følgene hotell er nå registrert: $hotellnavn $romtype $romnr");
             }
 
 

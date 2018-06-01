@@ -18,7 +18,7 @@
 
     <ul>
 
-      <li><a href="slett-sted.php"> Slett sted </a></li>
+      <li><a href="slett-sted-data.php"> Slett sted </a></li>
       <li><a href="slett-hotell-data.php"> Slett hotell </a></li>
       <li><a href="slett-hotellromtype-data.php"> Slett hotellromtype </a></li>
       <li><a href="slett-rom-data.php"> Slett rom </a></li>

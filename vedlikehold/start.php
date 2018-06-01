@@ -26,8 +26,10 @@
       <nav>
         <ul>
           <li><a href="3-1-brukerfunksjoner-hoved.php"> Hjem </a></li>
+          <link rel="stylesheet" type="text/css" href="style.css" media="screen" title="stilark"/>
         </ul>
 
+        <div class="meny">
         <h3>Brukerfunksjoner</h3>
         <ul>
           <li><a href="registrer-data.php"> Registrer data </a></li>
