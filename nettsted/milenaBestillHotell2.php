@@ -20,7 +20,7 @@ include("start.html");
   </select> <br/>
 
 
-  <h3>Velg ønsket dato:</h3>
+<h3>Velg ønsket dato:</h3>
   <script src="kalender.js"> </script>
   <script src="date-picker-v6/js/datepicker.js"> </script>
   <link rel="stylesheet" type="text/css" href="date-picker-v6/css/datepicker.css" />
@@ -28,10 +28,13 @@ include("start.html");
   <form method="post" action="" id="skjema" name="skjema">
    Dato fra: <input type="text" id="fradato" name="fradato" required /> <br/>
 
-  <form method="post" action="" id="skjema2" name="skjema2">
-   Dato til: <input type="text" id="tildato" name="tildato" required /> <br/>
+   <form method="post" action="" id="skjema2" name="skjema2">
+    Dato til: <input type="text" id="tildato" name="tildato" required /> <br/>
 
-
+   <h4>Skriv inn brukernavn og trykk bestill for å bekrefte hotellbestillingen</h4></br>
+   Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
+</br>
+</br>
   <input type="submit" value="Bestill" id="bestill" name="bestill" />
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </div></form>
@@ -42,34 +45,47 @@ include("start.html");
 if (isset($_POST ["bestill"]))
 
 {
+   $brukernavn=$_POST["brukernavn"];
    $romtype=$_POST["romtype"];
    $datoFra=$_POST["fradato"];
    $datoTil=$_POST["tildato"];
 
-   if(!$romtype || !$datoFra || !$datoTil)
+
+   if(!$brukernavn || !$romtype || !$datoFra || !$datoTil)
    {
       print("Alle felt m&aring; fylles ut for å kunne gjennomf&oslash;re hotellbestillingen");
 	  }
 	  else
 	  {
 
-	       include("db-tilkoblingMilena2.php");
-		   $sqlSetning="SELECT * FROM milenabestillhotell WHERE romtype='$romtype';";
+	       include("db-tilkoblingMilena.php");
+       $sqlSetning="SELECT romtype FROM milenabestillhotell WHERE romtype='$romtype';";
+      /* $sqlSetning="SELECT romtype, antallrom, hotellnavn FROM hotellromtype WHERE romtype='$romtype';";*/
+
 
        $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente fra database");
 		   $antallRader=mysqli_num_rows($sqlResultat);
 
+
 		   if($antallRader!=0)
 		      {
-			     print(" er registrert fra f&oslash;r");
+			     print(" Bestillingen er registrert fra f&oslash;r");
 			  }
+
 			  else
 			  {
-			    $sqlSetning="INSERT INTO milenabestillhotell (romtype) VALUES ('$romtype');";
+          $sqlSetning4="INSERT INTO milenabestillhotell (brukernavn) VALUES ('$brukernavn');";
+          $sqlSetning="INSERT INTO milenabestillhotell (romtype) VALUES ('$romtype');";
+          $sqlSetning2="INSERT INTO milenabestillhotell (datoFra) VALUES ('$datoFra');";
+			    $sqlSetning3="INSERT INTO milenabestillhotell (datoTil) VALUES ('$datoTil');";
+
 
           mysqli_query($db,$sqlSetning) or die ("Ikke mulig &aring; registrere i database");
 
-                print("F&oslash;lgende bestilling er n&aring; registrert: $romtype $datoFra $datoTil");
+                print("F&oslash;lgende bestilling er n&aring; registrert: </br>
+                Romtype $romtype </br>
+                Fra dato $datoFra </br>
+                Til dato $datoTil </br>");
 			  }
 	     }
 }

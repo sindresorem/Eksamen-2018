@@ -12,7 +12,6 @@ function listeboksRomtype()
   {
     $rad=mysqli_fetch_array($sqlResultat);
     $romtype=$rad["romtype"];
-    $antallrom=$rad["antallrom"];
     print ("<option value='$romtype'> $romtype </option>");
   }
 }

@@ -59,7 +59,9 @@ CREATE TABLE LAND (
   PRIMARY KEY (dato));
 
   CREATE TABLE MILENABESTILLHOTELL (
-    brukernavn VARCHAR(25) NOT NULL,
-    romtype VARCHAR(15) NOT NULL,
-    dato NOT NULL,
-  PRIMARY KEY (brukernavn, romtype)));
+      brukernavn VARCHAR(25) NOT NULL,
+      romtype VARCHAR(15) NOT NULL,
+      datoFra DATE,
+      datoTil DATE,
+      bestillingRegistrert TIMESTAMP,
+    PRIMARY KEY (romtype, datoFra, datoTil));

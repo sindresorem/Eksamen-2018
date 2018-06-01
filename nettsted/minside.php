@@ -39,6 +39,9 @@ else
 <li><a href="milenaBestillHotell.php">Milena bestill hotell</a></li>
 <br />
 <br />
+<li><a href="milenaBestillHotell2.php">Milena bestill hotell 2</a></li>
+<br />
+<br />
 <br />
 
 <h3>Utlogging</h3>
