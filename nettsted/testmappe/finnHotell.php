@@ -27,9 +27,13 @@ include("start.html");
 			print("<br/>");
 			print("<form method='post' action='' id='finnHotellSkjema' name='finnHotellSkjema'>");
 			print("Sted <input type='text' value='$sted' id='sted' name='sted' readonly /><br/>");
+
+			print("Sted <input type='text' value='$hotellnavn' id='sted' name='sted' readonly /><br/>");
 			print("Hotellnavn <select name='hotellnavn' id='hotellnavn'>");
 				include("dynamiskeFunksjoner1.php"); listeboksHotellnavn();
 			print("</select> <br/>");
+			print("Hotellnavn <input type='text' value='$hotellnavn' id='hotellnavn' name='hotellnavn' required /><br/>");
+
 			print("<input type='submit' value='Hotell' id='finnHotellKnapp' name='finnHotellKnapp'>");
 			print("</form>");
 		}
@@ -37,10 +41,8 @@ include("start.html");
 		if(isset($_POST["finnHotellKnapp"]))
 			{
 				include("db-tilkobling.php");
-				$sted=$_POST["sted"];
 				$hotellnavn=$_POST["hotellnavn"];
 
-						print("Treff for hotell $hotellnavn");
 
 						$sqlSetning="SELECT * FROM hotellromtype WHERE hotellnavn='$hotellnavn';";
 						$sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig &aring; hente data fra database");
@@ -67,10 +69,18 @@ include("start.html");
 							print("<tr><td>$hotellnavn </td><td>$romtype </td></tr>");
 						}
 
+				if(!$sted || !$hotellnavn)
+					{
+						print("Alle felt m&aring; fylles ut");
+					}
+				else
+					{
+						include("db-tilkobling.php");
+
 					print("</table>");
 				}
 
-			
+			}
 		}
 include("slutt.html");
 ?>

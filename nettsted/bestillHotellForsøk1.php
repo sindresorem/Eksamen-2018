@@ -46,31 +46,25 @@ include("start.html");
 						$sqlResultat=mysqli_query($db,$sqlSetning) or die ("Ikke mulig &aring; hente data fra database");
 						$antallRader=mysqli_num_rows($sqlResultat);
 
-						if($antallRader==0)
-					{
-						print("<h3>Ingen rom registrert på hotell: $hotellnavn</h3>");
-					}
-				else
-					{
+						$rad=mysqli_fetch_array($sqlResultat);
+						$hotellnavn=$rad["hotellnavn"];
+						$romtype=$rad["romtype"];
+						$antallrom=$rad["antallrom"];
 
-					print("<h3>De forskjellige romtypene på hotell: $hotellnavn</h3>");
-					print("<table border=1>");
-					print("<tr><th align=left>Hotellnavn</th><th align=left>Romtype</th></tr>");
-
-					for($r=1;$r<=$antallRader;$r++)
-						{
-							$rad=mysqli_fetch_array($sqlResultat);
-							$hotellnavn=$rad["hotellnavn"];
-							$romtype=$rad["romtype"];
-
-
-							print("<tr><td>$hotellnavn </td><td>$romtype </td></tr>");
-						}
-
-					print("</table>");
+						print("<br/>");
+						print("<form method='post' action='' id='finnHotellSkjema' name='finnHotellSkjema'>");
+						print("Sted <input type='text' value='$sted' id='sted' name='sted' readonly /><br/>");
+						print("Hotell <input type='text' value='$hotellnavn' id='hotellnavn' name='hotellnavn' readonly /><br/>");
+						print("Romtype <select name='romtype' id='romtype'>");
+							include("dynamiskeFunksjoner1.php"); listeboksRomtype();
+						print("</select> <br/>");
+						print("Antall rom <input type='text' id='booketRom' name='booketRom' />");
+						print("<input type='submit' value='Bestill' id='bestillKnapp' name='bestillKnapp'>");
+						print("<input type='reset' value='Nullstill' id='nullstill' name='nullstill'>");
+						print("</form>");
 				}
 
-			
-		}
+
+
 include("slutt.html");
 ?>

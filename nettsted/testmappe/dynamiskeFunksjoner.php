@@ -13,6 +13,7 @@ function listeboksSted()
 			{
 				$rad=mysqli_fetch_array($sqlResultat);
 				$sted=$rad["sted"];
+				$hotellnavn=$rad["hotellnavn"];
 
 				print("<option value='$sted'>$sted</option>");
 			}
