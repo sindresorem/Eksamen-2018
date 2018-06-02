@@ -17,7 +17,7 @@ include("start.html")
 <form method="post" action="" id="slettHotellSkjema" name="slettHotellSkjema" onSubmit="return bekreft()">
 Hotellbestilling:
 <select name="hotellnavn" id="hotellnavn">
-  <?php include("dynamiske-funksjoner.php"); listeboksSlettHotell();?>
+  <?php include("dynamiskeFunksjoner1.php"); listeboksSlettHotell();?>
 </select> <br/>
 <input type="submit" value="Slett hotell" name="slettHotellKnapp" id="slettHotellKnapp"/>
 </form>
@@ -29,10 +29,10 @@ if(isset($_POST["slettHotellKnapp"]))
 
    $hotellnavn=$_POST["hotellnavn"];
 
-   $sqlSetning="DELETE FROM hotell WHERE hotellnavn='$hotellnavn';";
+   $sqlSetning="DELETE FROM bestilling WHERE hotellnavn='$hotellnavn';";
    mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
 
-   print ("F&oslash;lgende hotellbestilling er n&aring; slettet: $hotellnavn $dato <br/>");
+   print ("F&oslash;lgende hotellbestilling er n&aring; slettet: $hotellnavn<br/>");
  }
 }
 ?>

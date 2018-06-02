@@ -28,7 +28,7 @@ else
 <ul>
 
 <br />
-<li><a href=".php">Bestill hotell</a></li>
+<li><a href="bestillHotell.php">Bestill hotell</a></li>
 <br />
 <li><a href="visHotellbestillinger.php">Vis hotellbestillinger</a></li>
 <br />

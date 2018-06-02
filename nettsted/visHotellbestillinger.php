@@ -26,13 +26,13 @@ if ("visHotell")
 
 {
 
-$sqlSetning="SELECT * FROM kunde;";
+$sqlSetning="SELECT * FROM bestilling ORDER BY hotellnavn;";
 $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente fra database");
 $antallRader=mysqli_num_rows($sqlResultat);
 
 print("<h3>Mine hotellbestillinger</h3>");
 print("<table border=1>");
-print("<tr><th align=left>land</th><th align=left>sted</th><th align=left>hotellnavn</th><th align=left>romtype</th><th align=left>antall rom</th><th align=left>dato</th></tr>");
+print("<tr><th align=left>land</th><th align=left>sted</th><th align=left>hotellnavn</th><th align=left>romtype</th><th align=left>antall rom</th><th align=left>ankomstdato</th><th align=left>avreisedato</th></tr>");
 
 }
 
@@ -46,7 +46,7 @@ for ($r=1;$r<=$antallRader;$r++)
   $antallrom=$rad["antallrom"];
   $dato=$rad["dato"];
 
-	print("<tr><td>$land</td><td>$sted</td><td>$hotellnavn</td><td>$romtype</td><td>$antallrom</td><td>$dato</td></tr>");
+	print("<tr><td>$land</td><td>$sted</td><td>$hotellnavn</td><td>$romtype</td><td>$antallrom</td><td>$datoFra</td><td>$datoTil</td></tr>");
 }
 
 print("</table>");
